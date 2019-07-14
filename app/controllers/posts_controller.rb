@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new # フォーム用の空のインスタンスを生成する。
+    @post = Post.new 
   end
   
   def create
@@ -45,7 +45,7 @@ class PostsController < ApplicationController
   private
   
   def post_params 
-    params.require(:post).permit(:title, :body)
+    params.require(:post).permit(:title, :body,  :category_id)
   end
   
   def set_post 
